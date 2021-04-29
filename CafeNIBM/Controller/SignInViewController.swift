@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import Loaf
 
 class SignInViewController: UIViewController {
 
@@ -54,6 +55,7 @@ class SignInViewController: UIViewController {
             
             if let error = error {
                 print(error.localizedDescription)
+                Loaf("Email or Password is Invalid !", state: .error, sender: self).show()
                 return
             }
             
@@ -64,6 +66,7 @@ class SignInViewController: UIViewController {
             // Save user logged in state
             let sessionManager = SessionManager()
             sessionManager.saveUserLogin()
+            self.performSegue(withIdentifier: "SignInToHome", sender: nil)
             
             
         }

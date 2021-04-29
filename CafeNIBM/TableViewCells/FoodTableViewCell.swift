@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class FoodTableViewCell: UITableViewCell {
 
@@ -27,7 +28,8 @@ class FoodTableViewCell: UITableViewCell {
         lblFoodName.text = foodItem.foodName
         lblFoodDesc.text = foodItem.foodDes
         lblFoodPrice.text = "LKR \(foodItem.foodPrice)"
-        imgFood.image = UIImage(named: foodItem.image)
+//        imgFood.image = UIImage(named: foodItem.image)
+        imgFood.kf.setImage(with: URL(string: foodItem.image))
         
         if foodItem.discount > 0 {
             lblFoodDiscount.isHidden = false

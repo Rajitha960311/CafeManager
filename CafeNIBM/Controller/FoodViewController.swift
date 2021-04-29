@@ -37,9 +37,21 @@ extension FoodViewController{
                 if let foodItems = data as? [String: Any]{
                     for item in foodItems {
                         if let foodInfo = item.value as? [String: Any]{
-                            print(foodInfo)
+                            
+                            let singleFoodItem = FoodItem(
+                                _id: "",
+                                foodName: foodInfo["name"] as! String,
+                                foodDes: foodInfo["description"] as! String,
+                                foodPrice: foodInfo["price"] as! Double,
+                                discount: foodInfo["discount"] as! Int,
+                                image: foodInfo["image"] as! String,
+                                category: foodInfo["category"] as! String)
+                            
+                            self.foodItems.append(singleFoodItem)
                         }
                     }
+                    
+                    self.tblFood.reloadData()
                 }
             }
         })
