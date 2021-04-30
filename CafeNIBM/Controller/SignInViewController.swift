@@ -37,11 +37,13 @@ class SignInViewController: UIViewController {
             return false
         }
         if email.count < 11 {
-            print("Enter a valid Email")
+//            print("Enter a valid Email")
+            Loaf("Enter a valid Email !", state: .error, sender: self).show()
             return false
         }
         if password.count < 6 {
-            print("Enter a valid Password")
+//            print("Enter a valid Password")
+            Loaf("Enter a valid Password !", state: .error, sender: self).show()
             return false
         }
         

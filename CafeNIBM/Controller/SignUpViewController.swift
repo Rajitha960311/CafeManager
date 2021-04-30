@@ -46,16 +46,18 @@ class SignUpViewController: UIViewController {
             return false
         }
         if email.count < 11 {
-            print("Enter a valid Email")
+//            print("Enter a valid Email")
+            Loaf("Enter a valid Email !", state: .error, sender: self).show()
+            return false
+        }
+        if mobile.count < 10 {
+//            print("Enter a valid Mobile No")
+            Loaf("Enter a valid Mobile No !", state: .error, sender: self).show()
             return false
         }
         if password.count < 6 {
-            print("Enter a valid Password")
-            return false
-        }
-        
-        if mobile.count < 10 {
-            print("Enter a valid Mobile No")
+//            print("Enter a valid Password")
+            Loaf("Enter a valid Password !", state: .error, sender: self).show()
             return false
         }
         

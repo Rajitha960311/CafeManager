@@ -23,3 +23,19 @@ struct FoodItem {
     var image: String
     var category: String
 }
+
+struct Category {
+    var categoryID: String
+    var catergoryName: String
+}
+
+struct Food {
+    var foodItemID: String
+    var foodName: String
+    var foodDescription: String
+    var foodPrice: Double
+    var discount: Int
+    var foodImg: String
+    var foodCategory: String
+    var isActive: Bool
+}
